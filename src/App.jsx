@@ -1,11 +1,11 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [gender, setGender] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [gender, setGender] = useState('');
   const [skills, setSkills] = useState([]);
 
   const handleCheckboxChange = (e) => {
@@ -20,11 +20,11 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted name:", name);
-    console.log("Submitted email:", email);
-    console.log("Submitted password:", pass);
-    console.log("Submitted gender:", gender);
-    console.log("Submitted skills:", skills);
+    console.log('Submitted name:', name);
+    console.log('Submitted email:', email);
+    console.log('Submitted password:', pass);
+    console.log('Submitted gender:', gender);
+    console.log('Submitted skills:', skills);
   };
 
   return (
@@ -33,7 +33,9 @@ function App() {
         onSubmit={handleSubmit}
         className="bg-white w-full max-w-md space-y-4"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center">Registration Form</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center">
+          Registration Form
+        </h2>
 
         <div>
           <label className="block font-medium mb-1">Name</label>
@@ -76,7 +78,7 @@ function App() {
                 type="radio"
                 name="gender"
                 value="male"
-                checked={gender === "male"}
+                checked={gender === 'male'}
                 onChange={(e) => setGender(e.target.value)}
               />
               Male
@@ -86,7 +88,7 @@ function App() {
                 type="radio"
                 name="gender"
                 value="female"
-                checked={gender === "female"}
+                checked={gender === 'female'}
                 onChange={(e) => setGender(e.target.value)}
               />
               Female
@@ -101,7 +103,7 @@ function App() {
               <input
                 type="checkbox"
                 value="dancing"
-                checked={skills.includes("dancing")}
+                checked={skills.includes('dancing')}
                 onChange={handleCheckboxChange}
               />
               Dancing
@@ -110,7 +112,7 @@ function App() {
               <input
                 type="checkbox"
                 value="painting"
-                checked={skills.includes("painting")}
+                checked={skills.includes('painting')}
                 onChange={handleCheckboxChange}
               />
               Painting
@@ -119,7 +121,7 @@ function App() {
               <input
                 type="checkbox"
                 value="coding"
-                checked={skills.includes("coding")}
+                checked={skills.includes('coding')}
                 onChange={handleCheckboxChange}
               />
               Coding
@@ -127,19 +129,26 @@ function App() {
           </div>
         </div>
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 "
-        >
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 ">
           Submit
         </button>
 
         <div className="mt-6 text-sm text-gray-700">
-          <p><strong>Name:</strong> {name}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Password:</strong> {pass}</p>
-          <p><strong>Gender:</strong> {gender}</p>
-          <p><strong>Skills:</strong> {skills.join(", ")}</p>
+          <p>
+            <strong>Name:</strong> {name}
+          </p>
+          <p>
+            <strong>Email:</strong> {email}
+          </p>
+          <p>
+            <strong>Password:</strong> {pass}
+          </p>
+          <p>
+            <strong>Gender:</strong> {gender}
+          </p>
+          <p>
+            <strong>Skills:</strong> {skills.join(', ')}
+          </p>
         </div>
       </form>
     </div>
